@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    namespace 'com.amitshekhar'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.amitshekhar"
+        minSdk 16
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        resValue("string", "PORT_NUMBER", "8080")
+        //Update for account. https://github.com/amitshekhariitbhu/Android-Debug-Database/issues/211
+        resValue("string", "BASIC_AUTH_ADMIN_PW", "")
+    }
+
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        preDexLibraries false
+        maxProcessCount 8
+        javaMaxHeapSize "4g"
+    }
+    compileOptions {
+        encoding "UTF-8"
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+        resultsDir = "${project.buildDir}/ut_results"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        textOutput "stdout"
+        textReport false
+        disable "UnusedResources", 'RestrictedApi'
+        // turn off checking the given issue id's
+        disable 'TypographyFractions', 'TypographyQuotes'
+        // turn on the given issue id's
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        // check *only* the given issue id's
+        check 'NewApi', 'InlinedApi'
+    }
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
+//    implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
+    implementation 'net.zetetic:android-database-sqlcipher:4.5.0'
+//    implementation 'net.zetetic:android-database-sqlcipher:4.4.0'
+//    implementation 'net.zetetic:android-database-sqlcipher:4.3.0'
+//    implementation 'net.zetetic:android-database-sqlcipher:4.1.3'
+//    implementation 'net.zetetic:android-database-sqlcipher:3.5.9'
+}
+

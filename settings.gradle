@@ -1,0 +1,50 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        // central
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/central' }
+        // jcenter
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        // public
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        //google
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+        //gradle-plugin
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        //apache snapshots
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/apache-snapshots' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://repo1.maven.org/maven2/' }
+        // central
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/central' }
+        // jcenter
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        // public
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public' }
+        //google
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+        //gradle-plugin
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+        //apache snapshots
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/apache-snapshots' }
+    }
+}
+
+rootProject.name = "seeDbyyy"
+include ':app', ':weblibrary_v2', ':fastDbs_v1',':debug-db-in-one_encrypt_v3'

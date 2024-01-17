@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Android Debug Database</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href='favicon.ico' rel='shortcut icon' type='image/x-icon'>
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.dataTables.min.js"></script>
+    <script src="dataTables.altEditor.free.js"></script>
+    <script src="dataTables.buttons.min.js"></script>
+    <script src="dataTables.select.min.js"></script>
+    <script src="dataTables.responsive.min.js"></script>
+
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <link href="jquery.dataTables.min.css" rel="stylesheet">
+    <link href="buttons.dataTables.min.css" rel="stylesheet">
+    <link href="select.dataTables.min.css" rel="stylesheet">
+    <link href="responsive.dataTables.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1"
+                    data-toggle="collapse"
+                    type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Android Debug Database</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="https://github.com/SeeYouOneDayDay/Android-Debug-Database"
+                       target="_blank">.</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">易观产品<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="https://www.qianfan.tech/"
+                               target="_blank">易观千帆</a>
+                        </li>
+                        <li>
+                            <a href="https://www.analysys.cn/"
+                               target="_blank">易观分析</a>
+                        </li>
+                        <li>
+                            <a href="https://www.analysysdata.com/"
+                               target="_blank">易观数科</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+
+<div class="container padding-fifty">
+
+    <div class="row padding-twenty">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="query">Query</label>
+                <input class="form-control" id="query">
+            </div>
+            <button class="btn btn-info" id="selected-db-download" onclick="downloadDb()"
+                    type="button">
+                Download
+            </button>
+            <button class="btn btn-info" id="selected-db-delete" onclick="deleteDb()" type="button">
+                Delete
+            </button>
+            <label class="panel-info" id="selected-db-info">Welcome</label>
+            <button class="btn btn-primary pull-right disabled" id="run-query"
+                    onclick="queryFunction()"
+                    type="submit">Run
+                Query
+            </button>
+        </div>
+    </div>
+
+
+    <div class="row padding-twenty">
+
+        <div class="col-sm-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">Databases</div>
+            </div>
+            <div class="list-group" id="db-list">
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">Tables</div>
+            </div>
+            <div class="list-group" id="table-list">
+            </div>
+        </div>
+
+        <div class="col-sm-8" id="parent-data-div">
+            <div class="panel panel-info">
+                <div class="panel-heading">Data</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="snackbar">Data Updated Successfully</div>
+
+</div>
+<div class="footer">
+    <div class="copyright">
+        版权所有Copyright © 2024 上海钒讯科技有限公司
+    </div>
+    <div class="icp">
+        沪ICP备2022017495号
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
