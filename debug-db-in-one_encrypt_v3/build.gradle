@@ -69,7 +69,9 @@ tasks.withType(Javadoc) {
 dependencies {
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'android.arch.persistence.room:runtime:1.1.1'
+    // // min sdk 21
 //    implementation 'net.zetetic:android-database-sqlcipher:4.5.4'
+    // // min sdk 16
     implementation 'net.zetetic:android-database-sqlcipher:4.5.0'
 //    implementation 'net.zetetic:android-database-sqlcipher:4.4.0'
 //    implementation 'net.zetetic:android-database-sqlcipher:4.3.0'
